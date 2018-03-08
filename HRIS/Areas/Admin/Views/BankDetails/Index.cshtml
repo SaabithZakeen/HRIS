@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.BankDetailsViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="bankdetails-table">
+                <thead>
+                    <tr>
+                        <th>Bank Name</th>
+                        <th>Branch Name</th>
+                        <th>Account No</th>
+                        <th>Name Given To Bank</th>
+                        <th>Salary</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.BankName</td>
+                            <td>@item.BranchName</td>
+                            <td>@item.AccountNo</td>
+                            <td>@item.NameGivenToBank</td>
+                            <td>@item.Salary</td>
+                            <td>@item.Description</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "BankDetails", new { item.BankId})">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "BankDetails")">Add</a>
+        }
+    </div>
+</body>
+</html>

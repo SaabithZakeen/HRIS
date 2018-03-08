@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.ExpertiseProfileViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="expertiseprofile-table">
+                <thead>
+                    <tr>
+                        <th>ExpertiseArea</th>
+                        <th>Description</th>
+                        <th>Status</th> 
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.ExpertiseArea</td>
+                            <td>@item.Description</td>
+                            <td>@item.Status</td>
+                            
+                            <td>
+                                <a href="@Url.Action("Edit", "ExpertiseProfile", new { item.ExpertiseId })">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "ExpertiseProfile")">Add</a>
+        }
+    </div>
+</body>
+</html>

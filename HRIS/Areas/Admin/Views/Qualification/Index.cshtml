@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.QualificationViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="qualification-table">
+                <thead>
+                    <tr>
+                        <th>Qualification Type</th>
+                        <th>Qualification</th>
+                        <th>Institute</th>
+                        <th>Qualification Year</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.QualificationType</td>
+                            <td>@item.Qualification</td>
+                            <td>@item.Institute</td>
+                            <td>@item.QualificationYear</td>
+                            <td>@item.Description</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "Qualification", new { item.QualificationId})">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "Qualification")">Add</a>
+        }
+    </div>
+</body>
+</html>

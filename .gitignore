@@ -1,0 +1,5 @@
+HRIS.DAL/bin/
+HRIS.DAL/obj/
+HRIS.Data.Models/obj/
+HRIS/obj/
+packages/

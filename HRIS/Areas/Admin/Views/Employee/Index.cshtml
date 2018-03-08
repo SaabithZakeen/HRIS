@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.EmployeeViewModel>
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+             
+            <table width="100%" id="employee-table">
+                <thead>
+                    <tr>
+                        <th>Employee First Name</th>
+                        <th>Employee Last Name</th>
+                        <th>Employee Name With Initials</th>
+                        <th>Employee Address</th>
+                        <th>Phone Number</th>
+                        <th>Status</th>
+                        <th>Nic</th>
+                        <th>Email</th>
+                        <th>DOJ</th>
+                        <th>Date Confirmed</th>
+                        <th>Employment Type</th>
+                        <th>DOB</th>
+                        <th>Marital Status</th>
+                        <th>Gender</th>
+                        <th>Transportation Mode</th>
+                        <th>Distance</th>
+                        <th>Travel Time</th>
+                        <th>Distance Polling Station</th>
+                        <th>Polling Station Name</th>
+                        <th>Distance Polling Station</th>
+                        <th>Department</th>
+                        <th>Designations</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.EmployeeFirstName</td>
+                            <td>@item.EmployeeLastName</td>
+                            <td>@item.EmployeeNameWithInitials</td>
+                            <td>@item.EmployeeAddress</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.Status</td>
+                            <td>@item.Nic</td>
+                            <td>@item.Email</td>
+                            <td>@item.DOJ</td>
+                            <td>@item.DateConfirmed</td>
+                            <td>@item.EmploymentType</td>
+                            <td>@item.DOB</td>
+                            <td>@item.MaritalStatus</td>
+                            <td>@item.Gender</td>
+                            <td>@item.TransportationMode</td>
+                            <td>@item.Distance</td>
+                            <td>@item.TravelTime</td>
+                            <td>@item.DistancePollingStation</td>
+                            <td>@item.PollingStationName</td>
+                            <td>@item.EmployeeDepartment</td>
+                            <td>@item.EmployeeDesignation</td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Employee", new { item.EmployeeId })">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "Employee")">Add</a>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{837A3486-B5FC-4B0B-987C-B8C1733600D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRIS.DAL</RootNamespace>
+    <AssemblyName>HRIS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HrisContext.cs" />
+    <Compile Include="Migrations\201802281212338_initialMigration.cs" />
+    <Compile Include="Migrations\201802281212338_initialMigration.Designer.cs">
+      <DependentUpon>201802281212338_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802281308353_DepartmentUser.cs" />
+    <Compile Include="Migrations\201802281308353_DepartmentUser.Designer.cs">
+      <DependentUpon>201802281308353_DepartmentUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803011453131_Designation.cs" />
+    <Compile Include="Migrations\201803011453131_Designation.Designer.cs">
+      <DependentUpon>201803011453131_Designation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803011703174_Employee.cs" />
+    <Compile Include="Migrations\201803011703174_Employee.Designer.cs">
+      <DependentUpon>201803011703174_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803061153406_newTables1.cs" />
+    <Compile Include="Migrations\201803061153406_newTables1.Designer.cs">
+      <DependentUpon>201803061153406_newTables1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803071235122_user1.cs" />
+    <Compile Include="Migrations\201803071235122_user1.Designer.cs">
+      <DependentUpon>201803071235122_user1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRIS.Data.Models\HRIS.Data.Models.csproj">
+      <Project>{443cf644-17c2-4605-9de7-88052d7ff63f}</Project>
+      <Name>HRIS.Data.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802281212338_initialMigration.resx">
+      <DependentUpon>201802281212338_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802281308353_DepartmentUser.resx">
+      <DependentUpon>201802281308353_DepartmentUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803011453131_Designation.resx">
+      <DependentUpon>201803011453131_Designation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803011703174_Employee.resx">
+      <DependentUpon>201803011703174_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803061153406_newTables1.resx">
+      <DependentUpon>201803061153406_newTables1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803071235122_user1.resx">
+      <DependentUpon>201803071235122_user1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
