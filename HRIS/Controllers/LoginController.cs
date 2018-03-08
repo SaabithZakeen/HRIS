@@ -32,7 +32,7 @@ namespace HRIS.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ModelState.AddModelError("", "Better try next time.");
+            ModelState.AddModelError("", "You fucked up.");
 
             return View(model);
         }
