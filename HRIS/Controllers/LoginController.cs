@@ -32,7 +32,7 @@ namespace HRIS.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ModelState.AddModelError("", "You fucked up.");
+            ModelState.AddModelError("", "Incorrect Username or Password.");
 
             return View(model);
         }

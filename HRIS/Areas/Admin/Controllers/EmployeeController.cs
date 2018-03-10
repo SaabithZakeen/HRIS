@@ -44,7 +44,7 @@ namespace HRIS.Areas.Admin.Controllers
                 employeeVm.DistancePollingStation = item.DistancePollingStation;
                 employeeVm.PollingStationName = item.PollingStationName;
                 employeeVm.EmployeeDesignation = designations.Where(des => des.Id == item.DesignationId).FirstOrDefault().Designation;
-                employeeVm.EmployeeDepartment = departments.Where(des => des.Id == item.DepartmentId).FirstOrDefault().DepartmentName;
+                employeeVm.EmployeeDepartment = departments.Where(dep => dep.Id == item.DepartmentId).FirstOrDefault().DepartmentName;
 
                 employeeVmList.Add(employeeVm);
             }
