@@ -17,7 +17,7 @@ namespace HRIS.Areas.Admin.Models
 
         public string Institute { get; set; }
 
-        public DateTime QualificationYear { get; set; }
+        public string QualificationYear { get; set; }
 
         public string Description { get; set; }
 

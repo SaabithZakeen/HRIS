@@ -44,7 +44,7 @@ namespace HRIS.Data.Models
 
 		public int Distance { get; set; }
 
-		public DateTime TravelTime { get; set; }
+		public string TravelTime { get; set; }
 
 		public int DistancePollingStation { get; set; }
 

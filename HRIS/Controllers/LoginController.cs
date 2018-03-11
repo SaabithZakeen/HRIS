@@ -33,8 +33,8 @@ namespace HRIS.Controllers
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 MvcApplication.CurruntUser = User.Identity.Name;
-                MvcApplication.CurruntUserId = db.UserProfile.Where(u => u.UserName == User.Identity.Name).FirstOrDefault().ID;
-                MvcApplication.CurruntEmployeeId = db.Employee.Where(u => u.UserLoginId == MvcApplication.CurruntUserId).FirstOrDefault().Id;
+                //MvcApplication.CurruntUserId = db.UserProfile.Where(u => u.UserName == User.Identity.Name).FirstOrDefault().ID;
+                //MvcApplication.CurruntEmployeeId = db.Employee.Where(u => u.UserLoginId == MvcApplication.CurruntUserId).FirstOrDefault().Id;
                 return RedirectToAction("Index", "Home");
             }
 
