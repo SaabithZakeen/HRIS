@@ -41,9 +41,20 @@ namespace HRIS.Controllers
         {
             try
             {
-                
+
                 if (!WebSecurity.UserExists("saabith"))
                 {
+                    //WebSecurity.CreateUserAndAccount("SysAdmin", "Admin@#123");
+                    //WebSecurity.CreateUserAndAccount("SysUser", "Admin@#123");
+                    //WebSecurity.CreateUserAndAccount("SysAudit", "Admin@#123");
+                    //string[] admin = new string[] { "SysAdmin" };
+                    //Roles.AddUsersToRole(admin, "admin");
+                    //string[] user = new string[] { "SysUser" };
+                    //Roles.AddUsersToRole(user, "user");
+                    //string[] audit = new string[] { "SysAudit" };
+                    //Roles.AddUsersToRole(audit, "audit");
+               
+
                     WebSecurity.CreateUserAndAccount("saabith", "abcABC123@@@");
                     Roles.AddUserToRole("saabith", "administrator");
                 }

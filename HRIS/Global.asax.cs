@@ -1,4 +1,5 @@
-﻿using HRIS.DAL;
+﻿using HRIS.App_Start;
+using HRIS.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -26,7 +27,7 @@ namespace HRIS
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //AuthConfig.RegisterAuth();
+            AuthConfig.RegisterAuth();
             LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
 
             if (User != null)
