@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMatrix.WebData;
+using System.Web.Security;
 
 namespace HRIS.Areas.Admin.Controllers
 {
@@ -91,7 +93,12 @@ namespace HRIS.Areas.Admin.Controllers
                     employee.DepartmentId = employeeVm.Department.Id;
 
 
-                    TryUpdateModel(employee, "EmployeeId,EmployeeFirstName,EmployeeLastName,EmployeeNameWithInitials,EmployeeAddress,PhoneNumber,Status,Nic,Email,DOJ,DateConfirmed,EmploymentType,DOB,MaritalStatus,Gender,TransportationMode,Distance,TravelTime,DistancePollingStation,PollingStationName,DesignationId,DepartmentId");
+                    WebSecurity.CreateUserAndAccount(employeeVm.UserLoginName, employeeVm.UserLoginPassword);
+                    Roles.AddUserToRole(employeeVm.UserLoginName, "user");
+
+                    employee.UserLoginId = db.UserProfile.Where(u => u.UserName == employeeVm.UserLoginName).FirstOrDefault().ID;
+
+                    TryUpdateModel(employee, "EmployeeId,EmployeeFirstName,EmployeeLastName,EmployeeNameWithInitials,EmployeeAddress,PhoneNumber,Status,Nic,Email,DOJ,DateConfirmed,EmploymentType,DOB,MaritalStatus,Gender,TransportationMode,Distance,TravelTime,DistancePollingStation,PollingStationName,DesignationId,DepartmentId,UserLoginId");
                     db.Employee.Add(employee);
                     db.Entry(employee).State = System.Data.Entity.EntityState.Added;
                     db.SaveChanges();

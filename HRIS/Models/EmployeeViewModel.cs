@@ -1,17 +1,21 @@
 ﻿using HRIS.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace HRIS.Areas.Admin.Models
+namespace HRIS.Models
 {
     public class EmployeeViewModel
     {
+        [Key]
         public int EmployeeId { get; set; }
 
+        [Display(Name="First name")]
         public string EmployeeFirstName { get; set; }
 
+        [Display(Name = "Last name")]
         public string EmployeeLastName { get; set; }
 
         public string EmployeeNameWithInitials { get; set; }

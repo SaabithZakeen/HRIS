@@ -20,6 +20,9 @@ namespace HRIS
         private static object _initializerLock = new object();
         private static bool _isInitialized;
         public static string CurruntUser { get; set; }
+        public static int CurruntUserId { get; set; }
+
+        public static int CurruntEmployeeId { get; set; }
 
         protected void Application_Start()
         {

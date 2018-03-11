@@ -1,0 +1,210 @@
+﻿@model HRIS.Models.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeNameWithInitials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeNameWithInitials)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOJ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmploymentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmploymentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaritalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransportationMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransportationMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravelTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravelTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistancePollingStation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistancePollingStation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PollingStationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PollingStationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeDepartment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeDepartment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeDesignation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeDesignation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLoginId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLoginId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLoginName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLoginName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserLoginPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserLoginPassword)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

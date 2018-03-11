@@ -50,6 +50,9 @@ namespace HRIS.Data.Models
 
 		public string PollingStationName { get; set; }
 
+        [ForeignKey("UserProfile")]
+        public int UserLoginId { get; set; }
+
         [ForeignKey("Departments")]
 		public int DepartmentId { get; set; }
 
@@ -59,6 +62,8 @@ namespace HRIS.Data.Models
 		public Departments Departments { get; set; }
 
 		public Designations Designations { get; set; }
+
+        public UserProfile UserProfile { get; set; }
 
 	}
 }

@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace HRIS.Controllers
 {
+    [Authorize(Roles = "administrator")]
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();

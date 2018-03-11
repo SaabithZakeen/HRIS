@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201803071235122_user1.Designer.cs">
       <DependentUpon>201803071235122_user1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803110814101_Login.cs" />
+    <Compile Include="Migrations\201803110814101_Login.Designer.cs">
+      <DependentUpon>201803110814101_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803071235122_user1.resx">
       <DependentUpon>201803071235122_user1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803110814101_Login.resx">
+      <DependentUpon>201803110814101_Login.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

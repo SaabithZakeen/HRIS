@@ -1,4 +1,5 @@
-﻿using HRIS.Models;
+﻿using HRIS.DAL;
+using HRIS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace HRIS.Controllers
 {
     public class LoginController : Controller
     {
+
+        private HrisContext db = new HrisContext();
         //// GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Index(string returnUrl)
@@ -26,9 +29,12 @@ namespace HRIS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(LoginModel model, string returnUrl)
         {
+            returnUrl = "Login/Index";
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 MvcApplication.CurruntUser = User.Identity.Name;
+                MvcApplication.CurruntUserId = db.UserProfile.Where(u => u.UserName == User.Identity.Name).FirstOrDefault().ID;
+                MvcApplication.CurruntEmployeeId = db.Employee.Where(u => u.UserLoginId == MvcApplication.CurruntUserId).FirstOrDefault().Id;
                 return RedirectToAction("Index", "Home");
             }
 
