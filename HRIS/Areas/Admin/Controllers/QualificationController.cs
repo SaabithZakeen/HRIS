@@ -37,6 +37,8 @@ namespace HRIS.Areas.Admin.Controllers
 
         public ActionResult Add()
         {
+            ViewBag.Employees = new SelectList(from employee in db.Employee.ToList().Where(c => c.Status == true) select employee, "Id", "EmployeeNameWithInitial", 0);
+			
             return View();
         }
 
@@ -55,7 +57,7 @@ namespace HRIS.Areas.Admin.Controllers
                     qualification.QualificationYear = vm.QualificationYear;
                     qualification.Description = vm.Description;
                     qualification.Status = vm.Status;
-
+                    qualification.EmployeeId = vm.EmployeeId;
 
                     TryUpdateModel(qualification, new string[] { "QualificationId, QualificationType, Qualification, Institute, QualificationYear, Description, Status" }); /*column name*/
                     db.Qualification.Add(qualification);

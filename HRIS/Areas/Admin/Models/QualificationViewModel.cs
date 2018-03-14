@@ -21,6 +21,8 @@ namespace HRIS.Areas.Admin.Models
 
         public string Description { get; set; }
 
+        public int EmployeeId { get; set; }
+
         public bool Status { get; set; }
     }
 }

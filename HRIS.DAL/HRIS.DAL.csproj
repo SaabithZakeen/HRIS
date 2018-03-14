@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201803111330088_datatype_change.Designer.cs">
       <DependentUpon>201803111330088_datatype_change.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803121254503_qualificationTableModifiedWithEmployeeId.cs" />
+    <Compile Include="Migrations\201803121254503_qualificationTableModifiedWithEmployeeId.Designer.cs">
+      <DependentUpon>201803121254503_qualificationTableModifiedWithEmployeeId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803111330088_datatype_change.resx">
       <DependentUpon>201803111330088_datatype_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803121254503_qualificationTableModifiedWithEmployeeId.resx">
+      <DependentUpon>201803121254503_qualificationTableModifiedWithEmployeeId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
