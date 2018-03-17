@@ -83,6 +83,14 @@
     <Compile Include="Migrations\201803121254503_qualificationTableModifiedWithEmployeeId.Designer.cs">
       <DependentUpon>201803121254503_qualificationTableModifiedWithEmployeeId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803170837262_userarea.cs" />
+    <Compile Include="Migrations\201803170837262_userarea.Designer.cs">
+      <DependentUpon>201803170837262_userarea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803170919063_Attendance.cs" />
+    <Compile Include="Migrations\201803170919063_Attendance.Designer.cs">
+      <DependentUpon>201803170919063_Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -124,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803121254503_qualificationTableModifiedWithEmployeeId.resx">
       <DependentUpon>201803121254503_qualificationTableModifiedWithEmployeeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803170837262_userarea.resx">
+      <DependentUpon>201803170837262_userarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803170919063_Attendance.resx">
+      <DependentUpon>201803170919063_Attendance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

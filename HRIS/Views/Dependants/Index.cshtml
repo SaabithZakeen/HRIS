@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HRIS.Models.DependantsViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="dependants-table">
+                <thead>
+                    <tr>
+                        <th>FullName</th>
+                        <th>DOB</th>
+                        <th>Nic</th>
+                        <th>Nationality</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>Telephone</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.FullName</td>
+                            <td>@item.DOB</td>
+                            <td>@item.Nic</td>
+                            <td>@item.Nationality</td>
+                            <td>@item.Address</td>
+                            <td>@item.Gender</td>
+                            <td>@item.Telephone</td>
+                            <td>@item.Description</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "Dependants", new {item.DependantId})">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "Dependants")">Add</a>
+        }
+    </div>
+</body>
+</html>

@@ -38,6 +38,7 @@ namespace HRIS.Controllers
             return View(bankdetailsList);
         }
 
+
         [HttpGet]
         public ActionResult Edit(int id)
         {

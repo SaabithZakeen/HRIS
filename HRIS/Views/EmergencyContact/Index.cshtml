@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HRIS.Models.EmergencyContactViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="emergencycontact-table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Relationship</th>
+                        <th>Nic</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.FullName</td>
+                            <td>@item.Relationship</td>
+                            <td>@item.Nic</td>
+                            <td>@item.Address</td>
+                            <td>@item.Mobile</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "EmergencyContact", new { item.EmergencyContactId })">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "EmergencyContact")">Add</a>
+        }
+    </div>
+</body>
+</html>
+

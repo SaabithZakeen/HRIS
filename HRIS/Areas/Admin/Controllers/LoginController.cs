@@ -1,19 +1,19 @@
-﻿using HRIS.DAL;
-using HRIS.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HRIS.DAL;
+using HRIS.Models;
 using System.Web.Security;
 using WebMatrix.WebData;
 
-namespace HRIS.Controllers
+namespace HRIS.Areas.Admin.Controllers
 {
     public class LoginController : Controller
     {
         private HrisContext db = new HrisContext();
-        //// GET: /Account/Login
+        // GET: Admin/Login
 
         [AllowAnonymous]
         public ActionResult Index(string returnUrl)
@@ -21,9 +21,9 @@ namespace HRIS.Controllers
             //ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
+        
         ////
-        //// POST: /Account/Login
+        //// POST: /Admin/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -61,7 +61,6 @@ namespace HRIS.Controllers
                     //string[] audit = new string[] { "SysAudit" };
                     //Roles.AddUsersToRole(audit, "audit");
                
-
                     WebSecurity.CreateUserAndAccount("saabith", "abcABC123@@@");
                     Roles.AddUserToRole("saabith", "administrator");
                 }

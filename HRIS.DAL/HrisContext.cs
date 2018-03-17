@@ -39,6 +39,8 @@ namespace HRIS.DAL
 
         public DbSet<EmergencyContact> EmergencyContact { get; set; }
 
+        public DbSet<Attendance> Attendance { get; set; }
+
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
         public DbSet<webpages_UsersInRoles> webpages_UsersInRoles { get; set; }
         public DbSet<UserProfile> UserProfile { get; set; }

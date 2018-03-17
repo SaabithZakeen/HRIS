@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.AttendanceViewModel>
+@{
+    ViewBag.Title = "Attendance";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="workexperience-table">
+                <thead>
+                    <tr>
+                        <th>AttendanceId</th>
+                        <th>EmployeeId</th>
+                        <th>Date</th>
+                        <th>InTime</th>
+                        <th>OutTime</th>
+                        <th>LateIn</th>
+                        <th>LateOut</th>
+                        <th>EarlyIn</th>
+                        <th>EarlyOut</th>
+                        <th>Status </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.EmployeeId</td>
+                            <td>@item.Date</td>
+                            <td>@item.InTime</td>
+                            <td>@item.OutTime</td>
+                            <td>@item.LateIn</td>
+                            <td>@item.LateOut</td>
+                            <td>@item.EarlyIn</td>
+                            <td>@item.EarlyOut</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "Attendance", new { item.AttendanceId})">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "Attendance")">Add</a>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HRIS.Models.WorkExperienceViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="workexperience-table">
+                <thead>
+                    <tr>
+                        <th>CompanyName</th>
+                        <th>Employee Last Name</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>Confirmed Date</th>
+                        <th>Department</th>
+                        <th>Designation When Leaving</th>
+                        <th>Reason For Leaving</th>
+                        <th>Achievements</th>
+                        <th>Accountabilities</th>
+                        <th>Period Served</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.CompanyName</td>
+                            <td>@item.FromDate</td>
+                            <td>@item.ToDate</td>
+                            <td>@item.ConfirmedDate</td>
+                            <td>@item.Department</td>
+                            <td>@item.DesignationWhenLeaving</td>
+                            <td>@item.ReasonForLeaving</td>
+                            <td>@item.Achievements</td>
+                            <td>@item.Accountabilities</td>
+                            <td>@item.PeriodServed</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "WorkExperience", new { item.WorkExperienceId})">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "WorkExperience")">Add</a>
+        }
+    </div>
+</body>
+</html>
