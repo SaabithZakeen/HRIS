@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <title>Edit-Employee Profile</title>
 </head>
 <body>
     @using (Html.BeginForm())
@@ -16,7 +16,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h4>Edit Employee</h4>
+            <h4>Edit Employee Profile</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">

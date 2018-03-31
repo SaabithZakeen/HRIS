@@ -47,7 +47,7 @@ namespace HRIS.Areas.Admin.Controllers
                 employeeVm.PollingStationName = item.PollingStationName;
                 employeeVm.EmployeeDesignation = designations.Where(des => des.Id == item.DesignationId).FirstOrDefault().Designation;
                 employeeVm.EmployeeDepartment = departments.Where(dep => dep.Id == item.DepartmentId).FirstOrDefault().DepartmentName;
-
+                employeeVm.IsSupervisor = item.IsSupervisor;
                 employeeVmList.Add(employeeVm);
             }
 
@@ -91,7 +91,7 @@ namespace HRIS.Areas.Admin.Controllers
                     employee.PollingStationName = employeeVm.PollingStationName;
                     employee.DesignationId = employeeVm.Designations.Id;
                     employee.DepartmentId = employeeVm.Department.Id;
-
+                    employee.IsSupervisor = employeeVm.IsSupervisor;
 
                     WebSecurity.CreateUserAndAccount(employeeVm.UserLoginName, employeeVm.UserLoginPassword);
                     Roles.AddUserToRole(employeeVm.UserLoginName, "user");
@@ -145,7 +145,7 @@ namespace HRIS.Areas.Admin.Controllers
             employeeVm.PollingStationName = employee.PollingStationName;
             employeeVm.EmployeeDesignation = designations.Where(des => des.Id == employee.DesignationId).FirstOrDefault().Designation;
             employeeVm.EmployeeDepartment = departments.Where(des => des.Id == employee.DepartmentId).FirstOrDefault().DepartmentName;
-
+            employeeVm.IsSupervisor = employee.IsSupervisor;
             return View(employeeVm);
         }
 
@@ -156,8 +156,7 @@ namespace HRIS.Areas.Admin.Controllers
 			{
 				if (ModelState.IsValid)
 				{
-                    var employee = new Employee();
-                    employee.Id = employeeVm.EmployeeId;
+                    Employee employee = db.Employee.Where(emp => emp.Id == employeeVm.EmployeeId).FirstOrDefault();
                     employee.EmployeeFirstName = employeeVm.EmployeeFirstName;
                     employee.EmployeeLastName = employeeVm.EmployeeLastName;
                     employee.EmployeeNameWithInitials = employeeVm.EmployeeNameWithInitials;
@@ -179,7 +178,7 @@ namespace HRIS.Areas.Admin.Controllers
                     employee.PollingStationName = employeeVm.PollingStationName;
                     employee.DesignationId = employeeVm.Designations.Id;
                     employee.DepartmentId = employeeVm.Department.Id;
-
+                    employee.IsSupervisor = employeeVm.IsSupervisor;
 
                     TryUpdateModel(employee, "EmployeeId,EmployeeFirstName,EmployeeLastName,EmployeeNameWithInitials,EmployeeAddress,PhoneNumber,Status,Nic,Email,DOJ,DateConfirmed,EmploymentType,DOB,MaritalStatus,Gender,TransportationMode,Distance,TravelTime,DistancePollingStation,PollingStationName,DesignationId,DepartmentId");
                     db.Employee.Add(employee);

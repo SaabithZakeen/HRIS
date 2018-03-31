@@ -15,13 +15,13 @@ namespace HRIS.Areas.Admin.Controllers
         // GET: Admin/Attendance
         public ActionResult Index()
         {
-            var attendance = db.Attendance.Where(m => m.Status == true).ToList();
+            var attendance = db.EmployeeAttendance.ToList();
 
             var attendanceList = new List<AttendanceViewModel>();
             foreach (var item in attendance)
             {
                 var attendanceVm = new AttendanceViewModel();
-                attendanceVm.AttendanceId = item.AttendanceId;
+                attendanceVm.AttendanceId = 0;
                 attendanceVm.EmployeeId = item.EmployeeId;
                 attendanceVm.Date = item.Date;
                 attendanceVm.InTime = item.InTime;
@@ -30,8 +30,7 @@ namespace HRIS.Areas.Admin.Controllers
                 attendanceVm.LateOut = item.LateOut;
                 attendanceVm.EarlyIn = item.EarlyIn;
                 attendanceVm.EarlyOut = item.EarlyOut;
-                attendanceVm.Status = item.Status;
-
+                
                 attendanceList.Add(attendanceVm);
             }
 
@@ -50,8 +49,8 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var attendance = new Attendance();
-                    attendance.AttendanceId = vm.AttendanceId; 
+                    var attendance = new EmployeeAttendance();
+                    attendance.EmployeeId = 0; 
                     attendance.EmployeeId = vm.EmployeeId;
                     attendance.Date = vm.Date;
                     attendance.InTime = vm.InTime;
@@ -60,10 +59,9 @@ namespace HRIS.Areas.Admin.Controllers
                     attendance.LateOut = vm.LateOut;
                     attendance.EarlyIn = vm.EarlyIn;
                     attendance.EarlyOut = vm.EarlyOut;
-                    attendance.Status = vm.Status;
 
                     TryUpdateModel(attendance, new string[] { "AttendanceId, EmployeeId, Date, InTime, OutTime, LateIn, LateOut, EarlyIn, EarlyOut, Status" }); /*column name*/
-                    db.Attendance.Add(attendance);
+                    db.EmployeeAttendance.Add(attendance);
                     db.Entry(attendance).State = System.Data.Entity.EntityState.Added;
                     db.SaveChanges();
 
@@ -78,9 +76,9 @@ namespace HRIS.Areas.Admin.Controllers
         }
         public ActionResult Edit(int id)
         {
-            var attendance = db.Attendance.Where(att => att.AttendanceId == AttendanceId).FirstOrDefault();
+            var attendance = db.EmployeeAttendance.Where(att => att.EmployeeId == 0).FirstOrDefault();
             var attendanceVm = new AttendanceViewModel();
-            attendanceVm.AttendanceId = attendance.AttendanceId;
+            attendanceVm.AttendanceId = attendance.EmployeeId;
             attendanceVm.EmployeeId = attendance.EmployeeId;
             attendanceVm.Date = attendance.Date;
             attendanceVm.InTime = attendance.InTime;
@@ -89,7 +87,6 @@ namespace HRIS.Areas.Admin.Controllers
             attendanceVm.LateOut = attendance.LateOut;
             attendanceVm.EarlyIn = attendance.EarlyIn;
             attendanceVm.EarlyOut = attendance.EarlyOut;
-            attendanceVm.Status = attendance.Status;
 
 
             return View(attendanceVm);
@@ -102,8 +99,8 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var attendance = new Attendance();
-                    attendance.AttendanceId = attendanceVm.AttendanceId;
+                    var attendance = new EmployeeAttendance();
+                    attendance.EmployeeId = attendanceVm.AttendanceId;
                     attendance.EmployeeId = attendanceVm.EmployeeId;
                     attendance.Date = attendanceVm.Date;
                     attendance.InTime = attendanceVm.InTime;
@@ -112,10 +109,9 @@ namespace HRIS.Areas.Admin.Controllers
                     attendance.LateOut = attendanceVm.LateOut;
                     attendance.EarlyIn = attendanceVm.EarlyIn;
                     attendance.EarlyOut = attendanceVm.EarlyOut;
-                    attendance.Status = true;
 
                     TryUpdateModel(attendance, "AttendanceId, EmployeeId, Date, InTime, OutTime, LateIn, LateOut, EarlyIn, EarlyOut, Status");
-                    db.Attendance.Add(attendance);
+                    db.EmployeeAttendance.Add(attendance);
                     db.Entry(attendance).State = System.Data.Entity.EntityState.Added;
                     db.SaveChanges();
                 }

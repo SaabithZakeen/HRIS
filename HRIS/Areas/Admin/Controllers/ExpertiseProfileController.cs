@@ -44,8 +44,7 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var expertiseprofile = new ExpertiseProfile();
-                    expertiseprofile.ExpertiseId = vm.ExpertiseId;
+                    ExpertiseProfile expertiseprofile = db.ExpertiseProfile.Where(exp => exp.ExpertiseId == vm.ExpertiseId).FirstOrDefault();
                     expertiseprofile.ExpertiseArea = vm.ExpertiseArea;
                     expertiseprofile.Description = vm.Description;
                     expertiseprofile.Status = vm.Status;

@@ -39,12 +39,21 @@ namespace HRIS.DAL
 
         public DbSet<EmergencyContact> EmergencyContact { get; set; }
 
-        public DbSet<Attendance> Attendance { get; set; }
+        public DbSet<SupervisorSubordinateMap> SupervisorSubordinateMap { get; set; }
+
+        public DbSet<EmployeeAttendance> EmployeeAttendance { get; set; }
+
+        public DbSet<LeaveType> LeaveType { get; set; }
+
+        public DbSet<EmployeeLeaveEntitlement> EmployeeLeaveEntitlement { get; set; }
+
+        public DbSet<EmployeeLeaveManagement> EmployeeLeaveManagement { get; set; }
 
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
         public DbSet<webpages_UsersInRoles> webpages_UsersInRoles { get; set; }
         public DbSet<UserProfile> UserProfile { get; set; }
         public DbSet<webpages_Membership> webpages_Membership { get; set; }
+
 
 		//public DbSet<EmailSettings> EmailSettings { get; set; }
 
@@ -54,6 +63,5 @@ namespace HRIS.DAL
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 		}
-
 	}
 }

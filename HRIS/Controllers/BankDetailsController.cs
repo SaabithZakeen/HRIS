@@ -64,8 +64,7 @@ namespace HRIS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var bankdetails = new BankDetails();
-                    bankdetails.BankId = bankdetailsVm.BankId;
+                    BankDetails bankdetails = db.BankDetails.Where(det => det.BankId == bankdetailsVm.BankId).FirstOrDefault();
                     bankdetails.BankName = bankdetailsVm.BankName;
                     bankdetails.BranchName = bankdetailsVm.BranchName;
                     bankdetails.AccountNo = bankdetailsVm.AccountNo;

@@ -58,6 +58,8 @@ namespace HRIS.Areas.Admin.Models
         
         public string  UserLoginPassword { get; set;}
 
+        public bool IsSupervisor { get; set; }
+
         public Departments Department { get; set; }
 
         public Designations Designations { get; set; }

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.EmployeeViewModel>
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_Home-Supervisor</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="employee-table">
+                <thead>
+                    <tr>
+                        <th>Employee First Name</th>
+                        <th>Employee Last Name</th>
+                        <th>Employee Name With Initials</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.EmployeeFirstName</td>
+                            <td>@item.EmployeeLastName</td>
+                            <td>@item.EmployeeNameWithInitials</td>
+                                <a href="@Url.Action("Edit", "Supervisor", new { item.EmployeeId })">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+</html>

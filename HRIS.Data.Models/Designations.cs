@@ -13,5 +13,7 @@ namespace HRIS.Data.Models
 		public string Designation { get; set; }
 
 		public bool Status { get; set; }
-	}
+
+        public string DesignationName { get; set; }
+    }
 }

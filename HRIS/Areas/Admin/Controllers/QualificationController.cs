@@ -49,8 +49,7 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var qualification = new Qualification();
-                    qualification.QualificationId = vm.QualificationId;
+                    Qualification qualification = db.Qualification.Where(qua => qua.QualificationId == vm.QualificationId).FirstOrDefault();
                     qualification.QualificationType = vm.QualificationType;
                     qualification.QualificationName = vm.Qualification;
                     qualification.Institute = vm.Institute;

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.AttendanceViewModel>
+
+@{
+    ViewBag.Title = "EmployeeAttendance";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin_Home-Employee Attendance</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LateIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LateOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EarlyIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EarlyOut)
+        </th>
+        <th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LateIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LateOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EarlyIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EarlyOut)
+        </td>
+    </tr>
+}
+
+</table>

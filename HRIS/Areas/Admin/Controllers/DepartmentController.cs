@@ -40,8 +40,7 @@ namespace HRIS.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var department = new Departments();
-                department.DepartmentName = vm.DepartmentName;
+                Departments department = db.Departments.Where(dep => dep.DepartmentName == vm.DepartmentName).FirstOrDefault();
                 department.Status = vm.Status;
                 department.User = vm.User;
 

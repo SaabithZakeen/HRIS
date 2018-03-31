@@ -13,6 +13,8 @@ namespace HRIS.Areas.Admin.Models
 
         public int EmployeeId { get; set; }
 
+        public string EmployeeName { get; set; }
+
         public string Date { get; set; }
 
         public string InTime { get; set; }

@@ -40,6 +40,7 @@ namespace HRIS.Controllers
             return View(dependantsList);
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var dependants = db.Dependants.Where(dep => dep.DependantId == DependantId).FirstOrDefault();
@@ -66,8 +67,7 @@ namespace HRIS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var dependants = new Dependants();
-                    dependants.DependantId = dependantsVm.DependantId;
+                    Dependants dependants = db.Dependants.Where(dep => dep.DependantId == dependantsVm.DependantId).FirstOrDefault();
                     dependants.FullName = dependantsVm.FullName;
                     dependants.DOB = dependantsVm.DOB;
                     dependants.Nic = dependantsVm.Nic;

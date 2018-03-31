@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.LeaveEntitlementViewModel>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+
+   <!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Amin_Home-Leave Entitlement</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="qualification-table">
+                <thead>
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Leaves Available</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.EmployeeId</td>
+                            <td>@item.LeavesAvailable</td>
+                            <td>@item.Status</td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "LeaveEntitlement", new { item.LeaveId })">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "LeaveEntitlement")">Add</a>
+        }
+    </div>
+</body>
+</html>

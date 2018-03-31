@@ -1,0 +1,49 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.LeaveTypeViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_Home-Leave Type</title>
+</head>
+<body>
+    <div>
+        @{
+
+            <table width="100%" id="leavetype-table">
+                <thead>
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Leave Type</th>
+                        <th>Leave Days</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>@item.EmployeeId</td>
+                            <td>@item.LeaveType</td>
+                            <td>@item.LeaveDays</td>
+                            <td>@item.Status</td>
+                            <td>
+                                <a href="@Url.Action("Edit", "LeaveType", new { item.LeaveId})">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="@Url.Action("Add", "LeaveType")">Add</a>
+        }
+    </div>
+</body>
+</html>
+

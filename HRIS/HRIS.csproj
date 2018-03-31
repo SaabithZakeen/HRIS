@@ -136,8 +136,12 @@
     <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ExpertiseProfileController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LeaveEntitlementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LeaveTypeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\QualificationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SupervisorController.cs" />
     <Compile Include="Areas\Admin\Controllers\WorkExperienceController.cs" />
     <Compile Include="Areas\Admin\Models\AccountViewModel.cs" />
     <Compile Include="Areas\Admin\Models\AttendanceViewModel.cs" />
@@ -148,13 +152,17 @@
     <Compile Include="Areas\Admin\Models\EmergencyContactViewModel.cs" />
     <Compile Include="Areas\Admin\Models\EmployeeViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ExpertiseProfileViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\LeaveEntitlementViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\LeaveTypeViewModel.cs" />
     <Compile Include="Areas\Admin\Models\QualificationViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\SupervisorSubordinateMapViewModel.cs" />
     <Compile Include="Areas\Admin\Models\WorkExperienceViewModel.cs" />
     <Compile Include="Controllers\BankDetailsController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DependantsController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\EmergencyContactController.cs" />
+    <Compile Include="Controllers\EmployeeLeaveManagementController.cs" />
     <Compile Include="Controllers\EmployeeProfileController.cs" />
     <Compile Include="Controllers\ExpertiseProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -171,6 +179,7 @@
     <Compile Include="Models\DependantsViewModel.cs" />
     <Compile Include="Models\DesignationViewModel.cs" />
     <Compile Include="Models\EmergencyContactViewModel.cs" />
+    <Compile Include="Models\EmployeeLeaveManagementViewModel.cs" />
     <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\ExpertiseProfileViewModel.cs" />
     <Compile Include="Models\QualificationViewModel.cs" />
@@ -362,6 +371,17 @@
     <Content Include="Areas\Admin\Views\Shared\_Login.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Admin\Views\Attendance\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Supervisor\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Supervisor\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LeaveType\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LeaveType\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\LeaveType\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LeaveEntitlement\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LeaveEntitlement\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\LeaveEntitlement\Edit.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Areas\Admin\Views\Report\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\EmployeeAttendance.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -414,6 +434,10 @@
     <Content Include="Views\Qualification\Edit.cshtml" />
     <Content Include="Views\WorkExperience\Index.cshtml" />
     <Content Include="Views\WorkExperience\Edit.cshtml" />
+    <Content Include="Views\EmployeeLeaveManagement\Index.cshtml" />
+    <Content Include="Views\EmployeeLeaveManagement\Add.cshtml" />
+    <Content Include="Views\EmployeeLeaveManagement\SupervisorIndex.cshtml" />
+    <Content Include="Views\EmployeeLeaveManagement\SupervisorEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

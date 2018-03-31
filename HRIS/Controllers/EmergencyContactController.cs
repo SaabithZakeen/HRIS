@@ -37,6 +37,7 @@ namespace HRIS.Controllers
             return View(emergencycontactList);
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var emergencycontact = db.EmergencyContact.Where(con => con.EmergencyContactId == EmergencyContactId).FirstOrDefault();
@@ -54,19 +55,18 @@ namespace HRIS.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(EmergencyContactViewModel qualificationVm)
+        public ActionResult Edit(EmergencyContactViewModel emergencycontactVm)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var emergencycontact = new EmergencyContact();
-                    emergencycontact.EmergencyContactId = qualificationVm.EmergencyContactId;
-                    emergencycontact.FullName = qualificationVm.FullName;
-                    emergencycontact.Relationship = qualificationVm.Relationship;
-                    emergencycontact.Nic = qualificationVm.Nic;
-                    emergencycontact.Address = qualificationVm.Address;
-                    emergencycontact.Mobile = qualificationVm.Mobile;
+                    EmergencyContact emergencycontact = db.EmergencyContact.Where(con => con.EmergencyContactId == emergencycontactVm.EmergencyContactId).FirstOrDefault();
+                    emergencycontact.FullName = emergencycontactVm.FullName;
+                    emergencycontact.Relationship = emergencycontactVm.Relationship;
+                    emergencycontact.Nic = emergencycontactVm.Nic;
+                    emergencycontact.Address = emergencycontactVm.Address;
+                    emergencycontact.Mobile = emergencycontactVm.Mobile;
                     emergencycontact.Status = true;
 
                     TryUpdateModel(emergencycontact, "EmergencyContactId, FullName, Relationship, Nic, Address, Mobile, Status");

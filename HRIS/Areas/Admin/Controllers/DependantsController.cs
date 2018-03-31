@@ -50,8 +50,7 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var dependants = new Dependants();
-                    dependants.DependantId = vm.DependantId;
+                    Dependants dependants = db.Dependants.Where(dep => dep.DependantId == vm.DependantId).FirstOrDefault();
                     dependants.FullName = vm.FullName;
                     dependants.DOB = vm.DOB;
                     dependants.Nic = vm.Nic;

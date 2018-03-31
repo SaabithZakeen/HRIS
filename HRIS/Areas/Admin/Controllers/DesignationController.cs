@@ -42,8 +42,7 @@ namespace HRIS.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                var designation = new Designations();
-                designation.Designation = designationVm.DesignationName;
+                Designations designation = db.Designations.Where(des => des.DesignationName == designationVm.DesignationName).FirstOrDefault();
                 designation.Status = true;
 
                 TryUpdateModel(designation, new string[] { "Designation" }); /*column name*/

@@ -47,8 +47,7 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var emergencycontact = new EmergencyContact();
-                    emergencycontact.EmergencyContactId = vm.EmergencyContactId;
+                    EmergencyContact emergencycontact = db.EmergencyContact.Where(con => con.EmergencyContactId == vm.EmergencyContactId).FirstOrDefault();
                     emergencycontact.FullName = vm.FullName;
                     emergencycontact.Relationship = vm.Relationship;
                     emergencycontact.Nic = vm.Nic;

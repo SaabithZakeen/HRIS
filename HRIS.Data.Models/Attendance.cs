@@ -11,7 +11,7 @@ namespace HRIS.Data.Models
     public class Attendance
     {
         [Key]
-        public int AttendanceId { get; set; }
+        public int Id { get; set; }
 
         public int EmployeeId { get; set; }
 

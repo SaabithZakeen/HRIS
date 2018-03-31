@@ -95,15 +95,14 @@ namespace HRIS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var employee = new Employee();
-                    employee.Id = employeeVm.EmployeeId;
+                    Employee employee = db.Employee.Where(emp => emp.Id == employeeVm.EmployeeId).FirstOrDefault();
                     employee.EmployeeFirstName = employeeVm.EmployeeFirstName;
                     employee.EmployeeLastName = employeeVm.EmployeeLastName;
                     employee.EmployeeNameWithInitials = employeeVm.EmployeeNameWithInitials;
                     employee.EmployeeAddress = employeeVm.EmployeeAddress;
                     employee.PhoneNumber = employeeVm.PhoneNumber;
                     employee.Status = true;
-                    employee.Nic = "nic";
+                    employee.Nic = employeeVm.Nic;
                     employee.Email = employeeVm.Email;
                     employee.DOJ = employeeVm.DOJ;
                     employee.DateConfirmed = employeeVm.DateConfirmed;
@@ -122,7 +121,7 @@ namespace HRIS.Controllers
 
                     TryUpdateModel(employee, "EmployeeId,EmployeeFirstName,EmployeeLastName,EmployeeNameWithInitials,EmployeeAddress,PhoneNumber,Status,Nic,Email,DOJ,DateConfirmed,EmploymentType,DOB,MaritalStatus,Gender,TransportationMode,Distance,TravelTime,DistancePollingStation,PollingStationName,DesignationId,DepartmentId");
                     db.Employee.Add(employee);
-                    db.Entry(employee).State = System.Data.Entity.EntityState.Added;
+                    db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
                 return RedirectToAction("Index");

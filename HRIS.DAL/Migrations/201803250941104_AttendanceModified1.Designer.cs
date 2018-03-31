@@ -7,13 +7,13 @@ namespace HRIS.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Attendance : IMigrationMetadata
+    public sealed partial class AttendanceModified1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Attendance));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AttendanceModified1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803170919063_Attendance"; }
+            get { return "201803250941104_AttendanceModified1"; }
         }
         
         string IMigrationMetadata.Source

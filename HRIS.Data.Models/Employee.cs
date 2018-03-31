@@ -59,6 +59,8 @@ namespace HRIS.Data.Models
 		[ForeignKey("Designations")]
 		public int DesignationId { get; set; }
 
+        public bool IsSupervisor { get;set;}
+
 		public Departments Departments { get; set; }
 
 		public Designations Designations { get; set; }

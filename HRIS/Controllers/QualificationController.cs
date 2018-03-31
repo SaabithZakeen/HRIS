@@ -37,6 +37,7 @@ namespace HRIS.Controllers
             return View(qualificationList);
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var qualification = db.Qualification.Where(qual => qual.QualificationId == QualificationId).FirstOrDefault();
@@ -60,8 +61,7 @@ namespace HRIS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var qualification = new Qualification();
-                    qualification.QualificationId = qualificationVm.QualificationId;
+                    Qualification qualification = db.Qualification.Where(emp => emp.QualificationId == qualificationVm.QualificationId).FirstOrDefault();
                     qualification.QualificationType = qualificationVm.QualificationType;
                     qualification.QualificationName = qualificationVm.Qualification;
                     qualification.Institute = qualificationVm.Institute;

@@ -44,6 +44,7 @@ namespace HRIS.Controllers
             return View(workexperienceList);
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var workexperience = db.WorkExperience.Where(exp => exp.WorkExperienceId == WorkExperienceId).FirstOrDefault();
@@ -71,8 +72,7 @@ namespace HRIS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var workexperience = new WorkExperience();
-                    workexperience.WorkExperienceId = workexperienceVm.WorkExperienceId;
+                    WorkExperience workexperience = db.WorkExperience.Where(wrk => wrk.WorkExperienceId == workexperienceVm.WorkExperienceId).FirstOrDefault();
                     workexperience.CompanyName = workexperienceVm.CompanyName;
                     workexperience.FromDate = workexperienceVm.FromDate;
                     workexperience.ToDate = workexperienceVm.ToDate;

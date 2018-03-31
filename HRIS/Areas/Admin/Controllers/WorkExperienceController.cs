@@ -53,8 +53,7 @@ namespace HRIS.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var workexperience = new WorkExperience();
-                    workexperience.WorkExperienceId = vm.WorkExperienceId;
+                    WorkExperience workexperience = db.WorkExperience.Where(exp => exp.WorkExperienceId == vm.WorkExperienceId).FirstOrDefault();
                     workexperience.CompanyName = vm.CompanyName;
                     workexperience.FromDate = vm.FromDate;
                     workexperience.ToDate = vm.ToDate;

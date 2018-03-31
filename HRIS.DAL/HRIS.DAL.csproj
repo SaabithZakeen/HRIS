@@ -87,9 +87,33 @@
     <Compile Include="Migrations\201803170837262_userarea.Designer.cs">
       <DependentUpon>201803170837262_userarea.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803170919063_Attendance.cs" />
-    <Compile Include="Migrations\201803170919063_Attendance.Designer.cs">
-      <DependentUpon>201803170919063_Attendance.cs</DependentUpon>
+    <Compile Include="Migrations\201803241016550_Supervisor6.cs" />
+    <Compile Include="Migrations\201803241016550_Supervisor6.Designer.cs">
+      <DependentUpon>201803241016550_Supervisor6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803250936304_AttendanceModified.cs" />
+    <Compile Include="Migrations\201803250936304_AttendanceModified.Designer.cs">
+      <DependentUpon>201803250936304_AttendanceModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803250941104_AttendanceModified1.cs" />
+    <Compile Include="Migrations\201803250941104_AttendanceModified1.Designer.cs">
+      <DependentUpon>201803250941104_AttendanceModified1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803250944440_AttendanceModified2.cs" />
+    <Compile Include="Migrations\201803250944440_AttendanceModified2.Designer.cs">
+      <DependentUpon>201803250944440_AttendanceModified2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803251006313_LeaveTypeRemoveEmployeeId.cs" />
+    <Compile Include="Migrations\201803251006313_LeaveTypeRemoveEmployeeId.Designer.cs">
+      <DependentUpon>201803251006313_LeaveTypeRemoveEmployeeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803251013230_LeaveEntitlementsIdAdded.cs" />
+    <Compile Include="Migrations\201803251013230_LeaveEntitlementsIdAdded.Designer.cs">
+      <DependentUpon>201803251013230_LeaveEntitlementsIdAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803310448551_Titleschn.cs" />
+    <Compile Include="Migrations\201803310448551_Titleschn.Designer.cs">
+      <DependentUpon>201803310448551_Titleschn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,8 +160,26 @@
     <EmbeddedResource Include="Migrations\201803170837262_userarea.resx">
       <DependentUpon>201803170837262_userarea.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803170919063_Attendance.resx">
-      <DependentUpon>201803170919063_Attendance.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803241016550_Supervisor6.resx">
+      <DependentUpon>201803241016550_Supervisor6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250936304_AttendanceModified.resx">
+      <DependentUpon>201803250936304_AttendanceModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250941104_AttendanceModified1.resx">
+      <DependentUpon>201803250941104_AttendanceModified1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250944440_AttendanceModified2.resx">
+      <DependentUpon>201803250944440_AttendanceModified2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803251006313_LeaveTypeRemoveEmployeeId.resx">
+      <DependentUpon>201803251006313_LeaveTypeRemoveEmployeeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803251013230_LeaveEntitlementsIdAdded.resx">
+      <DependentUpon>201803251013230_LeaveEntitlementsIdAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310448551_Titleschn.resx">
+      <DependentUpon>201803310448551_Titleschn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
