@@ -25,5 +25,7 @@ namespace HRIS.Data.Models
         public DateTime EndDate { get; set; }
 
         public bool Status { get; set; }
+
+        public string LeaveTypeName { get; set; }
     }
 }

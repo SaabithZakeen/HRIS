@@ -150,6 +150,7 @@
     <Compile Include="Areas\Admin\Models\DependantsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\DesignationViewModel.cs" />
     <Compile Include="Areas\Admin\Models\EmergencyContactViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\EmployeeLeaveManagementViewModel.cs" />
     <Compile Include="Areas\Admin\Models\EmployeeViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ExpertiseProfileViewModel.cs" />
     <Compile Include="Areas\Admin\Models\LeaveEntitlementViewModel.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\QualificationController.cs" />
     <Compile Include="Controllers\RegisterUsersController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -382,6 +384,9 @@
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Areas\Admin\Views\Report\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Report\EmployeeAttendance.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\EmployeeApprovedLeaves.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\EmployeePendingLeaves.cshtml" />
+    <Content Include="Areas\Admin\Views\Report\EmployeeRejectedLeaves.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -438,6 +443,8 @@
     <Content Include="Views\EmployeeLeaveManagement\Add.cshtml" />
     <Content Include="Views\EmployeeLeaveManagement\SupervisorIndex.cshtml" />
     <Content Include="Views\EmployeeLeaveManagement\SupervisorEdit.cshtml" />
+    <Content Include="Views\Reports\LeaveResults.cshtml" />
+    <Content Include="Views\Reports\SubordinateLeaveResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

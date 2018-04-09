@@ -34,5 +34,50 @@ namespace HRIS.Areas.Admin.Controllers
             }
             return View(vmList);
         }
+
+        public ActionResult EmployeeApprovedLeaves()
+        {
+            var approvedLeaves = db.EmployeeLeaveManagement.Where(lv => lv.IsApproved == 1).ToList();
+            var leaveManageList = new List<EmployeeLeaveManagementViewModel>();
+            foreach (var item in approvedLeaves)
+            {
+                var leaveManage = new EmployeeLeaveManagementViewModel();
+                leaveManage.Id = item.Id;
+                leaveManage.LeaveTypeName = item.LeaveTypeName;
+                leaveManage.EmployeeName = db.Employee.Find(item.EmployeeId).EmployeeFirstName;
+                leaveManageList.Add(leaveManage);
+            }
+            return View(leaveManageList);
+        }
+
+        public ActionResult EmployeePendingLeaves()
+        {
+            var approvedLeaves = db.EmployeeLeaveManagement.Where(lv => lv.IsApproved == 0).ToList();
+            var leaveManageList = new List<EmployeeLeaveManagementViewModel>();
+            foreach (var item in approvedLeaves)
+            {
+                var leaveManage = new EmployeeLeaveManagementViewModel();
+                leaveManage.Id = item.Id;
+                leaveManage.LeaveTypeName = item.LeaveTypeName;
+                leaveManage.EmployeeName = db.Employee.Find(item.EmployeeId).EmployeeFirstName;
+                leaveManageList.Add(leaveManage);
+            }
+            return View(leaveManageList);
+        }
+
+        public ActionResult EmployeeRejectedLeaves()
+        {
+            var approvedLeaves = db.EmployeeLeaveManagement.Where(lv => lv.IsApproved == 2).ToList();
+            var leaveManageList = new List<EmployeeLeaveManagementViewModel>();
+            foreach (var item in approvedLeaves)
+            {
+                var leaveManage = new EmployeeLeaveManagementViewModel();
+                leaveManage.Id = item.Id;
+                leaveManage.LeaveTypeName = item.LeaveTypeName;
+                leaveManage.EmployeeName = db.Employee.Find(item.EmployeeId).EmployeeFirstName;
+                leaveManageList.Add(leaveManage);
+            }
+            return View(leaveManageList);
+        }
     }
 }

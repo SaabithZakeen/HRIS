@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HRIS.Areas.Admin.Models.EmergencyContactViewModel>
+
+@{
+    ViewBag.Title = "SubordinateLeaveResults";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SubordinateLeaveResults</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Relationship)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Relationship)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmergencyContactId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmergencyContactId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmergencyContactId })
+        </td>
+    </tr>
+}
+
+</table>

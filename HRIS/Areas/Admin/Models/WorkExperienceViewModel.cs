@@ -12,14 +12,19 @@ namespace HRIS.Areas.Admin.Models
         [Key]
         public int WorkExperienceId { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string CompanyName { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public DateTime FromDate { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public DateTime ToDate { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public DateTime ConfirmedDate { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string Department { get; set; }
 
         public string DesignationWhenLeaving { get; set; }

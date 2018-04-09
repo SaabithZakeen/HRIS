@@ -13,12 +13,16 @@ namespace HRIS.Areas.Admin.Models
         
         public string QualificationType { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string Qualification { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string Institute { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string QualificationYear { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string Description { get; set; }
 
         public int EmployeeId { get; set; }

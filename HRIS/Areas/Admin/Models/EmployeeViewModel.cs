@@ -1,6 +1,7 @@
 ﻿using HRIS.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,18 +11,24 @@ namespace HRIS.Areas.Admin.Models
     {
         public int EmployeeId { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string EmployeeFirstName { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string EmployeeLastName { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string EmployeeNameWithInitials { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string EmployeeAddress { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public int PhoneNumber { get; set; }
 
         public bool Status { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string Nic { get; set; }
 
         public string Email { get; set; }

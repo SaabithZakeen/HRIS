@@ -10,6 +10,7 @@ namespace HRIS.Areas.Admin.Models
     {
         public int DesignationId { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string DesignationName { get; set; }
     }
 }

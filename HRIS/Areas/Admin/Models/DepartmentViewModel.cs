@@ -11,6 +11,7 @@ namespace HRIS.Areas.Admin.Models
         [Key]
         public int DepartmentId { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string DepartmentName { get; set; }
 
         public bool Status { get; set; }

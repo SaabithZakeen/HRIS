@@ -11,6 +11,7 @@ namespace HRIS.Areas.Admin.Models
         [Key]
         public int ExpertiseId { get; set; }
 
+        [Required(ErrorMessage = "Required field.")]
         public string ExpertiseArea { get; set; }
 
         public string Description { get; set; }
